@@ -32,6 +32,9 @@ public class ProfService {
     }
 
     public Prof createProf(Prof prof) {
+        if (prof.getCodeprof() == null || prof.getCodeprof().isBlank()) {
+            throw new IllegalArgumentException("Le code professeur ne peut pas être vide.");
+        }
         if (profRepository.existsById(prof.getCodeprof())) {
             throw new ConflictException("Le code professeur '" + prof.getCodeprof() + "' est déjà utilisé.");
         }
