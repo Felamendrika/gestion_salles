@@ -32,6 +32,9 @@ public class SalleService {
     }
 
     public Salle createSalle(Salle salle) {
+        if (salle.getCodesal() == null || salle.getCodesal().isBlank()) {
+            throw new IllegalArgumentException("Le code salle ne peut pas etre vide.");
+        }
         if (salleRepository.existsById(salle.getCodesal())) {
             throw new ConflictException("Le code salle '" + salle.getCodesal() + "' est déjà utilisé.");
         }
