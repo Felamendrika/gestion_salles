@@ -2,8 +2,7 @@ package com.gestionsalles.app.service;
 
 import java.util.Map;
 
-// Une classe simple qui ne fait que transporter des données calculées, sans logique.
-// C'est ce qu'on appelle un DTO (Data Transfer Object).
+// DTO (Data Transfer Object) : classe simple qui ne fait que transporter des données calculées, sans logique
 public class DashboardStats {
 
     private final long totalProfs;
