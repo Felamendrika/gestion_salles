@@ -18,6 +18,13 @@ pipeline {
                 bat 'mvn test'
             }
         }
+
+        stage('Package'){
+            steps {
+                bat 'mvn package -DskipTests'
+                archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
+            }
+        }
     }
 
     post {
